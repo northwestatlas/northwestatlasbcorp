@@ -4,7 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North West Atlas B Corp</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Регистрация шрифта Wila Milita */
+        @font-face {
+            font-family: 'Wila Milita';
+            src: url('wila-milita.regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Основные стили */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Видеофон с затемнением */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #video-background {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        #video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Навигация */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #0074d9, #636efa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+        }
+
+        /* Разделы */
+        section {
+            padding: 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Главная секция */
+        #home {
+            padding: 150px 20px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        #home h1 {
+            font-family: 'Wila Milita', Arial, sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        #home p {
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Раздел "О нас" */
+        #about {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        #about h2 {
+            font-family: 'Wila Milita', Arial, sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Раздел "Услуги" */
+        #services {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        #services ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #services li {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Раздел "Investment Focus" */
+        #investment-focus {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        #investment-focus h2 {
+            font-family: 'Wila Milita', Arial, sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .investment-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .investment-block {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .investment-block:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Раздел "Контакты" */
+        #contact {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(45deg, #0074d9, #636efa);
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* Медиа-запросы */
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 36px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .investment-block {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Видеофон -->
@@ -48,33 +250,28 @@
             <li>Оценка рисков</li>
             <li>Масштабирование бизнесов</li>
             <li>Стратегическое партнерство</li>
-            <li>Финансовый анализ</li>
-            <li>Консалтинг по инвестициям</li>
         </ul>
     </section>
 
-    <!-- Новая секция "Investment Focus" -->
-   <section id="investment-focus">
-    <h2>Investment Focus</h2>
-    <div class="investment-container">
-        <div class="investment-block">Ecotech</div>
-        <div class="investment-block">Agrotech</div>
-        <div class="investment-block">IIoT & Blockchain</div>
-        <div class="investment-block">Smartcharity</div>
-        <div class="investment-block">AI & Big Data</div>
-    </div>
-</section>
+    <!-- Раздел "Investment Focus" -->
+    <section id="investment-focus">
+        <h2>Investment Focus</h2>
+        <div class="investment-container">
+            <div class="investment-block">Ecotech</div>
+            <div class="investment-block">Agrotech</div>
+            <div class="investment-block">IIoT & Blockchain</div>
+            <div class="investment-block">Smartcharity</div>
+        </div>
+    </section>
 
     <!-- Раздел "Контакты" -->
     <section id="contact">
         <h2>Контакты</h2>
         <p>Email: info@nwa.com</p>
-        <p>Телефон: +7 (495) 123-45-67</p>
-        <p>Адрес: Москва, ул. Инвесторов, д. 10</p>
     </section>
 
     <!-- Футер -->
-    <footer style="background-color: rgba(0, 0, 0, 0.7); color: white; text-align: center; padding: 10px;">
+    <footer>
         <p>&copy; 2025 North West Atlas B Corp. Все права защищены.</p>
     </footer>
 </body>
