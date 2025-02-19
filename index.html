@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Пример современного сайта с видеофоном, адаптивностью и темной темой">
-    <title>Современный сайт</title>
+    <title>North West Atlas B Corp</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Видеофон -->
@@ -16,8 +17,12 @@
         </picture>
         <div id="video-overlay"></div>
     </div>
-    <!-- Навигация -->
+
+    <!-- Логотип и навигация -->
     <nav aria-label="Основная навигация">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="height: 30px;">
+        </div>
         <ul>
             <li><a href="#home" aria-current="page">Главная</a></li>
             <li><a href="#about">О нас</a></li>
@@ -26,17 +31,20 @@
             <li><a href="#contact">Контакты</a></li>
         </ul>
     </nav>
+
     <!-- Главная секция -->
     <section id="home">
-        <h1>Добро пожаловать на наш сайт</h1>
-        <p>Мы предлагаем инновационные решения для вашего бизнеса</p>
+        <h1>North West Atlas B Corp</h1>
+        <p>Мы помогаем стартапам и инвесторам принимать осознанные решения для достижения долгосрочного успеха.</p>
         <a href="#contact" class="btn" aria-label="Перейти к контактам">Связаться с нами</a>
     </section>
+
     <!-- Раздел "О нас" -->
     <section id="about">
         <h2>О нас</h2>
-        <p>Мы — команда профессионалов, специализирующихся на технологических решениях.</p>
+        <p>Мы эксперты в области анализа рисков и инвестиций с глобальным подходом. Наша цель — устойчивый рост проектов.</p>
     </section>
+
     <!-- Раздел "Услуги" -->
     <section id="services">
         <h2>Наши услуги</h2>
@@ -46,27 +54,32 @@
             <li>Дизайн</li>
         </ul>
     </section>
+
     <!-- Раздел "Investment Focus" -->
     <section id="investment-focus">
         <h2>Инвестиционный фокус</h2>
         <div class="investment-container">
-            <div class="investment-block">Технологии</div>
-            <div class="investment-block">Финансы</div>
-            <div class="investment-block">Недвижимость</div>
+            <div class="investment-block"><i class="fa-solid fa-leaf"></i> Технологии</div>
+            <div class="investment-block"><i class="fa-solid fa-chart-line"></i> Финансы</div>
+            <div class="investment-block"><i class="fa-solid fa-building"></i> Недвижимость</div>
         </div>
     </section>
+
     <!-- Раздел "Контакты" -->
     <section id="contact">
         <h2>Контакты</h2>
         <p>Свяжитесь с нами по электронной почте или телефону.</p>
         <a href="mailto:info@example.com" class="btn">Написать нам</a>
     </section>
+
     <!-- Футер -->
     <footer>
-        <p>&copy; 2023 Ваша компания. Все права защищены.</p>
+        <p>&copy; 2023 North West Atlas B Corp. Все права защищены.</p>
     </footer>
+
     <!-- Кнопка переключения темы -->
     <button id="theme-toggle">Сменить тему</button>
+
     <script>
         // Плавная прокрутка при клике на ссылки навигации
         document.querySelectorAll('nav a').forEach(anchor => {
@@ -83,15 +96,26 @@
             });
         });
 
-        // Переключение темы
+        // Переключение темы с сохранением в localStorage
         const toggleButton = document.getElementById('theme-toggle');
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark-theme');
-        } else {
+
+        // Загрузка сохраненной темы
+        if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-theme');
+        } else {
+            document.body.classList.add('dark-theme');
         }
+
         toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark'); // Сохраняем темную тему
+            } else {
+                document.body.classList.remove('dark-theme');
+                document.body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light'); // Сохраняем светлую тему
+            }
         });
     </script>
 </body>
