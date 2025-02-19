@@ -36,8 +36,8 @@ body::before {
 
 /* Шапка (Header) */
 header {
-    background: linear-gradient(45deg, #0074d9, #636efa);
-    color: white;
+    background: transparent; /* Прозрачный фон */
+    color: white; /* Белый текст */
     padding: 20px 0;
 }
 header nav ul {
