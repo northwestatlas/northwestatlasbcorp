@@ -6,12 +6,23 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Футуристический шрифт */
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9; /* Легкий светлый фон */
+    margin: 0;
+    padding: 0;
+    background: url('pinterest-image.jpg') no-repeat center center/cover; /* Укажите имя вашего изображения */
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-attachment: fixed; /* Фон остается неподвижным при прокрутке */
+    color: white; /* Белый текст для контраста (если фон темный) */
 }
-
+body::before {
+    content: ''; /* Создаем пустой элемент */
+    position: fixed; /* Фиксируем его на месте */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачное затемнение */
+    z-index: -1; /* Размещаем затемнение за основным содержимым */
+}
 /* Шапка (Header) */
 header {
     background: linear-gradient(45deg, #0074d9, #636efa); /* Сине-фиолетовый градиент */
