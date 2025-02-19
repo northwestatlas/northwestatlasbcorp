@@ -12,9 +12,11 @@ body {
     background-color: #000;
 }
 
-/* Отступ для контента */
+/* Глобальный отступ под шапку */
 section {
     padding-top: 70px; /* Отступ под шапку */
+    position: relative;
+    z-index: 1;
 }
 
 /* Главная секция */
@@ -94,7 +96,7 @@ section {
 /* Список с числами */
 #about ul {
     list-style-type: decimal;
-    padding-left: 30px;
+    padding-left: 30px; /* Отступ для номеров */
     margin: 0;
     text-align: left; /* Выравниваем список по левому краю */
 }
@@ -113,21 +115,25 @@ section {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    /* Заголовок */
     #home h1 {
         font-size: 48px;
     }
 
+    /* Контейнер для текста */
     #about .content-box {
         max-width: 100%;
         padding: 30px 20px;
     }
 
+    /* Заголовки */
     #about h2, #about h3 {
         font-size: 28px;
     }
 
+    /* Текст */
     #about p, #about li {
         font-size: 16px;
-        line-height: 1.4;
+        line-height: 1.6;
     }
 }
