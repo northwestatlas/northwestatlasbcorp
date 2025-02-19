@@ -1,0 +1,44 @@
+/* Основные настройки */
+body {
+    font-family: 'Montserrat', sans-serif; /* Футуристический шрифт */
+    background-color: white; /* Белый фон */
+    color: black; /* Черный текст */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out; /* Плавное появление заголовка */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Эффект неона */
+}
+
+p {
+    font-size: 24px;
+    animation: fadeIn 3s ease-in-out; /* Плавное появление параграфа */
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
