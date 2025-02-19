@@ -144,10 +144,12 @@
         z-index: 1;
     }
 
-    footer p {
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
+    footer {
+    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный чёрный фон */
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
 
     /* Медиа-запросы */
     @media (max-width: 768px) {
