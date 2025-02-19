@@ -89,6 +89,18 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+/* Логотип */
+.logo {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 999;
+}
+
+.logo img {
+    height: 30px;
+}
+
 /* Главная секция */
 #home {
     padding: 200px 20px 100px;
@@ -124,14 +136,27 @@ nav a:hover {
     border: none;
     border-radius: 10px;
     text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-    max-width: 100%;
-    width: fit-content;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
+/* Эффект неона */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0074d9, #636efa);
+    z-index: -1;
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 0;
 }
 
 /* Адаптивность кнопки */
@@ -149,6 +174,27 @@ section {
     animation: fadeInUp 1s ease forwards;
     opacity: 0;
     transform: translateY(20px);
+}
+
+/* Задержка для каждой секции */
+#home {
+    animation-delay: 0.5s;
+}
+
+#about {
+    animation-delay: 1s;
+}
+
+#services {
+    animation-delay: 1.5s;
+}
+
+#investment-focus {
+    animation-delay: 2s;
+}
+
+#contact {
+    animation-delay: 2.5s;
 }
 
 @keyframes fadeInUp {
@@ -209,6 +255,12 @@ section {
     transition: all 0.3s ease;
 }
 
+.investment-block i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--accent-color);
+}
+
 .investment-block:hover {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -222,8 +274,10 @@ section {
 
 /* Футер */
 footer {
-    background-color: var(--bg-color);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
     padding: 20px;
+    color: var(--text-color);
+    text-align: center;
 }
 
 footer p {
