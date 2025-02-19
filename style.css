@@ -1,48 +1,3 @@
-/* Общие настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    color: #fff;
-    text-align: center;
-    background-color: #000;
-}
-
-/* Глобальный отступ под шапку */
-section {
-    padding-top: 70px; /* Отступ под шапку */
-    position: relative;
-    z-index: 1;
-}
-
-/* Главная секция */
-#home {
-    padding: 200px 20px 100px;
-    position: relative;
-    z-index: 1;
-}
-
-#home h1 {
-    font-family: 'Wila Milita', Arial, sans-serif;
-    font-size: 64px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
-    white-space: pre-line; /* Разрешаем ручной перенос строк */
-}
-
-#home p {
-    font-size: 24px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.9;
-}
-
 /* Раздел "О нас" */
 #about {
     padding: 80px 20px;
@@ -52,13 +7,13 @@ section {
 
 /* Контейнер для текста */
 #about .content-box {
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Градиентная подложка */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Soft-рамка */
+    border-radius: 10px; /* Закругленные углы */
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 40px 30px; /* Внутренние отступы */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Тени для объема */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
@@ -70,6 +25,7 @@ section {
     font-size: 36px;
     margin-bottom: 20px;
     color: #fff;
+    text-align: center; /* Заголовок остается центрированным */
 }
 
 /* Подзаголовки */
@@ -80,60 +36,57 @@ section {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center; /* Центрируем подзаголовки */
+    text-align: left; /* Выравнивание по левому краю */
 }
 
 /* Параграфы */
 #about p {
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 20px; /* Увеличиваем размер шрифта */
+    line-height: 1.8; /* Более комфортный интерлиньяж */
     letter-spacing: 0.5px;
     opacity: 0.9;
-    margin-bottom: 25px;
-    text-align: center; /* Центрируем текст */
+    margin-bottom: 25px; /* Больше отступов между абзацами */
+    text-align: left; /* Выравнивание по ширине */
 }
 
 /* Список с числами */
 #about ul {
-    list-style-type: decimal;
+    list-style-type: decimal; /* Числовые маркеры */
     padding-left: 30px; /* Отступ для номеров */
     margin: 0;
-    text-align: left; /* Выравниваем список по левому краю */
+    text-align: left; /* Выравнивание по ширине */
 }
 
 #about li {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Отступ между пунктами */
     color: #fff;
+    text-align: left; /* Выравнивание по ширине */
 }
 
 /* Выделение ключевых фраз */
 #about strong {
-    color: #fff; /* Белый цвет */
+    color: #0074d9; /* Синий цвет для ключевых фраз */
     font-weight: bold;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    /* Заголовок */
-    #home h1 {
-        font-size: 48px;
-    }
-
-    /* Контейнер для текста */
     #about .content-box {
-        max-width: 100%;
-        padding: 30px 20px;
+        max-width: 100%; /* Ширина занимает всю доступную область */
+        padding: 30px 20px; /* Уменьшаем внутренние отступы */
     }
 
-    /* Заголовки */
-    #about h2, #about h3 {
-        font-size: 28px;
+    #about h2 {
+        font-size: 28px; /* Уменьшаем размер заголовка */
     }
 
-    /* Текст */
+    #about h3 {
+        font-size: 20px; /* Уменьшаем размер подзаголовков */
+    }
+
     #about p, #about li {
-        font-size: 16px;
-        line-height: 1.6;
+        font-size: 16px; /* Уменьшаем размер текста */
+        line-height: 1.4;
     }
 }
