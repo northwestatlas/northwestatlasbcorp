@@ -193,12 +193,6 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.investment-block i {
-    margin-right: 10px;
-    font-size: 20px;
-    color: #0074d9;
-}
-
 /* Раздел "Контакты" */
 #contact {
     padding: 80px 20px;
@@ -216,29 +210,32 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* Футер */
-footer {
-    background-color: #000;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-}
-
+/* Кнопка "Связаться с нами" */
 .btn {
     display: inline-block;
     padding: 15px 30px;
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
-    background: linear-gradient(45deg, #0074d9, #636efa);
+    color: #fff; /* Белый текст */
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+    border: none;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.4); /* Увеличиваем прозрачность */
+    transform: scale(1.05); /* Небольшое увеличение размера */
+}
+
+/* Футер */
+footer {
+    background-color: #000;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 footer p {
