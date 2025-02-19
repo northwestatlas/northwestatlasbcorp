@@ -5,15 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North West Atlas B Corp</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Основные стили */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        
+        /* Видеофон с затемнением */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        #video-background {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        #video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4); /* Легкое затемнение */
+        }
+        
+        /* Навигация */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            backdrop-filter: blur(5px);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Разделы */
+        section {
+            padding: 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-    <!-- Видеофон -->
-    <video autoplay muted loop id="video-background">
-        <source src="northwestatlasbcorp.mp4" type="video/mp4">
-        Ваш браузер не поддерживает тег video.
-    </video>
-
-    <!-- Остальное содержимое страницы -->
+    <div id="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="northwestatlasbcorp.mp4" type="video/mp4">
+            Ваш браузер не поддерживает тег video.
+        </video>
+        <div id="video-overlay"></div>
+    </div>
+    
     <header>
         <nav>
             <ul>
@@ -24,14 +100,17 @@
             </ul>
         </nav>
     </header>
-   <section id="home">
-    <h1>North West Atlas B Corp</h1>
-    <p>Мы помогаем стартапам и инвесторам принимать осознанные решения для достижения долгосрочного успеха.</p>
-</section>
+    
+    <section id="home">
+        <h1>North West Atlas B Corp</h1>
+        <p>Мы помогаем стартапам и инвесторам принимать осознанные решения для достижения долгосрочного успеха.</p>
+    </section>
+    
     <section id="about">
         <h2>О нас</h2>
         <p>Мы эксперты в области анализа рисков и инвестиций с глобальным подходом. Наша цель — устойчивый рост проектов.</p>
     </section>
+    
     <section id="services">
         <h2>Наши услуги</h2>
         <ul>
@@ -40,10 +119,12 @@
             <li>Стратегическое партнерство</li>
         </ul>
     </section>
+    
     <section id="contact">
         <h2>Контакты</h2>
         <p>Email: info@nwa.com</p>
     </section>
+    
     <footer>
         <p>&copy; 2025 North West Atlas B Corp. Все права защищены.</p>
     </footer>
