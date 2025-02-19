@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="North West Atlas B Corp — компания будущего">
     <title>North West Atlas B Corp</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Видеофон -->
     <div id="video-container">
-        <img src="background.jpg" alt="Background Image" id="video-background">
+        <video autoplay muted loop id="video-background">
+            <source src="northwestatlasbcorp.mp4" type="video/mp4">
+            Ваш браузер не поддерживает тег video.
+        </video>
+        <div id="video-overlay"></div>
     </div>
 
-    <!-- Логотип и навигация -->
-    <nav aria-label="Основная навигация">
-        <div class="logo">
-            <img src="logo.png" alt="Logo" style="height: 30px;">
-        </div>
-        <ul>
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#investment-focus">Инвестиции</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
+    <!-- Шапка -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#investment-focus">Инвестиционные направления</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Главная секция -->
     <section id="home">
         <h1>North West Atlas B Corp</h1>
-        <p>Мы помогаем стартапам и инвесторам принимать осознанные решения для достижения долгосрочного успеха.</p>
-        <a href="#contact" class="btn">Связаться с нами</a>
+        <p>Элитные решения для глобального будущего</p>
     </section>
 
     <!-- Раздел "О нас" -->
@@ -53,12 +53,12 @@
 
     <!-- Раздел "Investment Focus" -->
     <section id="investment-focus">
-        <h2>Инвестиционный фокус</h2>
+        <h2>Investment Focus</h2>
         <div class="investment-container">
-            <div class="investment-block"><i class="fa-solid fa-leaf"></i> Ecotech</div>
-            <div class="investment-block"><i class="fa-solid fa-seedling"></i> Agrotech</div>
-            <div class="investment-block"><i class="fa-solid fa-network-wired"></i> IIoT & Blockchain</div>
-            <div class="investment-block"><i class="fa-solid fa-hand-holding-heart"></i> Smartcharity</div>
+            <div class="investment-block">Ecotech</div>
+            <div class="investment-block">Agrotech</div>
+            <div class="investment-block">IIoT & Blockchain</div>
+            <div class="investment-block">Smartcharity</div>
         </div>
     </section>
 
@@ -66,53 +66,11 @@
     <section id="contact">
         <h2>Контакты</h2>
         <p>Email: info@nwa.com</p>
-        <a href="mailto:info@nwa.com" class="btn">Написать нам</a>
     </section>
 
     <!-- Футер -->
     <footer>
-        <p>&copy; 2023 North West Atlas B Corp. Все права защищены.</p>
+        <p>&copy; 2025 North West Atlas B Corp. Все права защищены.</p>
     </footer>
-
-    <!-- Кнопка переключения темы -->
-    <button id="theme-toggle">Сменить тему</button>
-
-    <script>
-        // Плавная прокрутка при клике на ссылки навигации
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Переключение темы с сохранением в localStorage
-        const toggleButton = document.getElementById('theme-toggle');
-
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-theme');
-        } else {
-            document.body.classList.add('dark-theme');
-        }
-
-        toggleButton.addEventListener('click', () => {
-            if (document.body.classList.contains('light-theme')) {
-                document.body.classList.remove('light-theme');
-                document.body.classList.add('dark-theme');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.body.classList.remove('dark-theme');
-                document.body.classList.add('light-theme');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
 </body>
 </html>
