@@ -92,10 +92,6 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #0074d9; /* Светло-синий при наведении */
-}
-
 /* Главная секция */
 #home {
     padding: 200px 20px 100px;
