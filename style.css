@@ -6,6 +6,9 @@
     font-style: normal;
 }
 
+/* Подключение шрифта Montserrat (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 /* Общие настройки */
 * {
     margin: 0;
@@ -16,21 +19,21 @@
 body {
     margin: 0;
     padding: 0;
-    color: white; /* Белый текст для контраста */
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
+    color: white;
+    font-family: 'Wila Milita', sans-serif;
 }
 
 /* Видеофон */
 #video-background {
-    position: fixed; /* Размещаем видео по всему экрану */
+    position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
-    z-index: -1; /* Размещаем видео позади всего содержимого */
+    z-index: -1;
 }
 
-/* Затемнение (опционально) */
+/* Затемнение */
 body::before {
     content: '';
     position: fixed;
@@ -38,142 +41,25 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачное затемнение */
-    z-index: -1; /* Размещаем затемнение перед видео */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-/* Общие стили для секций */
-section {
-    padding: 60px 20px;
-    text-align: center;
-    background: transparent; /* Прозрачный фон */
-    position: relative; /* Для использования псевдоэлементов */
-    z-index: 1; /* Чтобы содержимое секции было поверх фона */
-}
-
-/* Эффект белой полосы со свечением */
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent); /* Белая полоса с мягким свечением */
-    z-index: -1; /* Размещаем эффект позади содержимого */
-}
-
-/* Шапка (Header) */
-header {
-    background: transparent; /* Прозрачный фон */
-    color: white; /* Белый текст */
-    padding: 20px 0;
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-}
-
-header nav ul li a:hover {
-    color: #ffffffcc;
-}
-
-/* Главная секция (#home) */
-#home {
-    text-align: center;
-    padding: 100px 20px;
-}
-
+/* Заголовок */
 #home h1 {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
+    font-family: 'Wila Milita', sans-serif;
     font-size: 48px;
-    margin-bottom: 20px;
-    color: white; /* Белый цвет текста */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкий световой эффект */
-}
-
-#home p {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 24px;
-    color: white; /* Белый цвет текста */
-}
-
-/* Раздел "О нас" */
-#about {
-    color: white; /* Белый текст для контраста */
-}
-
-#about h2 {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #0074d9;
-}
-
-#about p {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* Раздел "Услуги" */
-#services {
-    color: white; /* Белый текст для контраста */
-}
-
-#services h2 {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #0074d9;
-}
-
-#services ul {
-    list-style: none;
-    padding: 0;
-}
-
-#services ul li {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-/* Раздел "Контакты" */
-#contact {
-    color: white; /* Белый текст для контраста */
-}
-
-#contact h2 {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #0074d9;
-}
-
-#contact p {
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
-    font-size: 18px;
-}
-
-/* Футер */
-footer {
-    background-color: #333;
+    margin-bottom: 10px;
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Слоган */
+#home p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
