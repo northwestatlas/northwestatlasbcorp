@@ -76,10 +76,10 @@ header nav ul li a:hover {
 
 /* Раздел "О нас" */
 #about {
-    padding: 60px 20px;
-    background-color: white;
-    text-align: center;
-    color: black; /* Темный текст для светлого фона */
+    padding: 60px 20px; /* Отступы вокруг содержимого */
+    text-align: center; /* Центрирование текста */
+    background: transparent; /* Прозрачный фон */
+    color: white; /* Белый текст для контраста */
 }
 #about h2 {
     font-size: 36px;
