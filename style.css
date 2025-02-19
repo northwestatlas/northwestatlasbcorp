@@ -61,16 +61,17 @@ header nav ul li a:hover {
     text-align: center;
     padding: 100px 20px;
 }
+
 #home h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #0074d9, #636efa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px rgba(0, 116, 217, 0.5), 0 0 20px rgba(0, 116, 217, 0.3);
+    color: white; /* Белый цвет текста */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкий световой эффект */
 }
+
 #home p {
     font-size: 24px;
+    color: white; /* Белый цвет текста */
 }
 
 /* Раздел "О нас" */
