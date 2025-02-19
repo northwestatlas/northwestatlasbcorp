@@ -83,15 +83,6 @@ nav a:hover {
                  0 0 20px rgba(255, 255, 255, 0.6); /* Дополнительный эффект */
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
 /* Главная секция */
 #home {
     padding: 200px 20px 100px;
@@ -119,19 +110,62 @@ nav a {
 /* Раздел "О нас" */
 #about {
     padding: 80px 20px;
-    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Контейнер для текста */
+#about .content-box {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Градиентная подложка */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Soft-рамка */
+    border-radius: 10px; /* Закругленные углы */
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 40px 30px; /* Внутренние отступы */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Тени для объема */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
 }
 
 #about h2 {
     font-family: 'Wila Milita', Arial, sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
+    color: #fff; /* Белый цвет заголовка */
 }
 
 #about p {
     font-size: 18px;
     line-height: 1.6;
+    letter-spacing: 0.5px;
     opacity: 0.9;
+    margin-bottom: 20px;
+    color: #fff; /* Белый цвет текста */
+}
+
+#about ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#about li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    color: #fff; /* Белый цвет текста */
+}
+
+/* Иконка перед каждым пунктом списка */
+#about li::before {
+    content: '\2022'; /* Круглая маркерная точка */
+    color: #0074d9; /* Синий цвет маркера */
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 5px;
 }
 
 /* Раздел "Услуги" */
@@ -292,5 +326,19 @@ section {
     #services ul, .investment-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    #about .content-box {
+        max-width: 100%; /* Ширина занимает всю доступную область */
+        padding: 30px 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    #about h2, #services h2, #investment-focus h2, #contact h2 {
+        font-size: 28px; /* Уменьшаем размер заголовков */
+    }
+
+    #about p, #about li, #services li, #investment-block, #contact p {
+        font-size: 16px; /* Уменьшаем размер текста */
+        line-height: 1.4;
     }
 }
