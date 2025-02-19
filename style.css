@@ -68,6 +68,22 @@ nav ul {
 }
 
 nav a {
+    color: #fff; /* Белый цвет текста */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении */
+nav a:hover {
+    color: #fff; /* Белый текст */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* Легкое белое свечение */
+                 0 0 20px rgba(255, 255, 255, 0.6); /* Дополнительный эффект */
+}
+
+nav a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
