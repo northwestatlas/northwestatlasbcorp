@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Видеофон -->
     <div id="video-container">
         <picture>
@@ -17,7 +16,6 @@
         </picture>
         <div id="video-overlay"></div>
     </div>
-
     <!-- Навигация -->
     <nav aria-label="Основная навигация">
         <ul>
@@ -28,20 +26,17 @@
             <li><a href="#contact">Контакты</a></li>
         </ul>
     </nav>
-
     <!-- Главная секция -->
     <section id="home">
         <h1>Добро пожаловать на наш сайт</h1>
         <p>Мы предлагаем инновационные решения для вашего бизнеса</p>
         <a href="#contact" class="btn" aria-label="Перейти к контактам">Связаться с нами</a>
     </section>
-
     <!-- Раздел "О нас" -->
     <section id="about">
         <h2>О нас</h2>
         <p>Мы — команда профессионалов, специализирующихся на технологических решениях.</p>
     </section>
-
     <!-- Раздел "Услуги" -->
     <section id="services">
         <h2>Наши услуги</h2>
@@ -51,7 +46,6 @@
             <li>Дизайн</li>
         </ul>
     </section>
-
     <!-- Раздел "Investment Focus" -->
     <section id="investment-focus">
         <h2>Инвестиционный фокус</h2>
@@ -61,22 +55,44 @@
             <div class="investment-block">Недвижимость</div>
         </div>
     </section>
-
     <!-- Раздел "Контакты" -->
     <section id="contact">
         <h2>Контакты</h2>
         <p>Свяжитесь с нами по электронной почте или телефону.</p>
         <a href="mailto:info@example.com" class="btn">Написать нам</a>
     </section>
-
     <!-- Футер -->
     <footer>
         <p>&copy; 2023 Ваша компания. Все права защищены.</p>
     </footer>
-
     <!-- Кнопка переключения темы -->
     <button id="theme-toggle">Сменить тему</button>
+    <script>
+        // Плавная прокрутка при клике на ссылки навигации
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-    <script src="script.js"></script>
+        // Переключение темы
+        const toggleButton = document.getElementById('theme-toggle');
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+        });
+    </script>
 </body>
 </html>
