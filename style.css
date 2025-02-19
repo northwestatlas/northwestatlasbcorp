@@ -1,90 +1,167 @@
-/* Регистрация шрифта Wila Milita */
-@font-face {
-    font-family: 'Wila Milita';
-    src: url('wila-milita.regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+<style>
+    /* Регистрация шрифта Wila Milita */
+    @font-face {
+        font-family: 'Wila Milita';
+        src: url('wila-milita.regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
-/* Подключение шрифта Montserrat (Google Fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+    /* Основные стили */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        text-align: center;
+    }
 
-/* Общие настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    /* Видеофон с затемнением */
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -1;
+    }
 
-body {
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-family: 'Wila Milita', sans-serif;
-}
+    #video-background {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
 
-/* Видеофон */
-#video-background {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-}
+    #video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4); /* Легкое затемнение */
+    }
 
-/* Затемнение */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
+    /* Навигация */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px 0;
+        backdrop-filter: blur(5px);
+    }
 
-/* Главная секция (#home) */
-#home {
-    text-align: center;
-    padding: 150px 20px; /* Больше отступов */
-}
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
 
-/* Заголовок */
-#home h1 {
-    font-family: 'Wila Milita', sans-serif;
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    animation: fadeIn 2s ease-in-out;
-}
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 5px 10px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
 
-/* Слоган */
-#home p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: white;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    animation: fadeIn 2s ease-in-out;
-}
+    nav a:hover {
+        background: linear-gradient(45deg, #0074d9, #636efa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+    }
 
-/* Анимация */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+    /* Разделы */
+    section {
+        padding: 100px 20px;
+        position: relative;
+        z-index: 1;
+    }
 
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
+    /* Главная секция */
+    #home {
+        padding: 150px 20px;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    }
+
     #home h1 {
-        font-size: 36px;
+        font-family: 'Wila Milita', Arial, sans-serif;
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
     #home p {
-        font-size: 18px;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
-}
+
+    /* Раздел "О нас" */
+    #about {
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    #about h2 {
+        font-family: 'Wila Milita', Arial, sans-serif;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    /* Раздел "Услуги" */
+    #services {
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    #services ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #services li {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    /* Раздел "Контакты" */
+    #contact {
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Футер */
+    footer {
+        background: linear-gradient(45deg, #0074d9, #636efa);
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    footer p {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Медиа-запросы */
+    @media (max-width: 768px) {
+        #home h1 {
+            font-size: 36px;
+        }
+
+        section h2 {
+            font-size: 28px;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
