@@ -34,24 +34,48 @@ body::before {
     z-index: -1; /* Размещаем затемнение перед видео */
 }
 
+/* Общие стили для секций */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: transparent; /* Прозрачный фон */
+    position: relative; /* Для использования псевдоэлементов */
+    z-index: 1; /* Чтобы содержимое секции было поверх фона */
+}
+
+/* Эффект белой полосы со свечением */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent); /* Белая полоса с мягким свечением */
+    z-index: -1; /* Размещаем эффект позади содержимого */
+}
+
 /* Шапка (Header) */
 header {
     background: transparent; /* Прозрачный фон */
     color: white; /* Белый текст */
     padding: 20px 0;
 }
+
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
 header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
+
 header nav ul li a:hover {
     color: #ffffffcc;
 }
@@ -76,16 +100,15 @@ header nav ul li a:hover {
 
 /* Раздел "О нас" */
 #about {
-    padding: 60px 20px; /* Отступы вокруг содержимого */
-    text-align: center; /* Центрирование текста */
-    background: transparent; /* Прозрачный фон */
     color: white; /* Белый текст для контраста */
 }
+
 #about h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
+
 #about p {
     font-size: 18px;
     line-height: 1.6;
@@ -93,20 +116,20 @@ header nav ul li a:hover {
 
 /* Раздел "Услуги" */
 #services {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-    color: black; /* Темный текст для светлого фона */
+    color: white; /* Белый текст для контраста */
 }
+
 #services h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
+
 #services ul {
     list-style: none;
     padding: 0;
 }
+
 #services ul li {
     font-size: 20px;
     margin: 10px 0;
@@ -114,16 +137,15 @@ header nav ul li a:hover {
 
 /* Раздел "Контакты" */
 #contact {
-    padding: 60px 20px;
-    background-color: white;
-    text-align: center;
-    color: black; /* Темный текст для светлого фона */
+    color: white; /* Белый текст для контраста */
 }
+
 #contact h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
+
 #contact p {
     font-size: 18px;
 }
