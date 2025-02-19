@@ -128,22 +128,34 @@ nav a:hover {
     animation: fadeInUp 1s ease forwards;
 }
 
+/* Заголовок секции */
 #about h2 {
     font-family: 'Wila Milita', Arial, sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
-    color: #fff; /* Белый цвет заголовка */
+    color: #fff;
 }
 
+/* Подзаголовки */
+#about h3 {
+    font-family: 'Wila Milita', Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Параграфы */
 #about p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px; /* Увеличиваем размер шрифта */
+    line-height: 1.8; /* Более комфортный интерлиньяж */
     letter-spacing: 0.5px;
     opacity: 0.9;
-    margin-bottom: 20px;
-    color: #fff; /* Белый цвет текста */
+    margin-bottom: 25px; /* Больше отступов между абзацами */
 }
 
+/* Список */
 #about ul {
     list-style: none;
     padding: 0;
@@ -155,7 +167,7 @@ nav a:hover {
     margin-bottom: 10px;
     position: relative;
     padding-left: 20px;
-    color: #fff; /* Белый цвет текста */
+    color: #fff;
 }
 
 /* Иконка перед каждым пунктом списка */
@@ -166,6 +178,33 @@ nav a:hover {
     position: absolute;
     left: 0;
     top: 5px;
+}
+
+/* Выделение ключевых фраз */
+#about strong {
+    color: #0074d9; /* Синий цвет для ключевых фраз */
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #about .content-box {
+        max-width: 100%; /* Ширина занимает всю доступную область */
+        padding: 30px 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    #about h2 {
+        font-size: 28px; /* Уменьшаем размер заголовка */
+    }
+
+    #about h3 {
+        font-size: 20px; /* Уменьшаем размер подзаголовков */
+    }
+
+    #about p, #about li {
+        font-size: 16px; /* Уменьшаем размер текста */
+        line-height: 1.4;
+    }
 }
 
 /* Раздел "Услуги" */
