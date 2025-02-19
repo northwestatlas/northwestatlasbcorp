@@ -8,54 +8,59 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('northwestatlasbcorp.mp4') no-repeat center center/cover; /* Укажите имя вашего изображения */
-    background-size: cover; /* Растягиваем изображение на весь экран */
-    background-attachment: fixed; /* Фон остается неподвижным при прокрутке */
-    color: white; /* Белый текст для контраста (если фон темный) */
+    color: white; /* Белый текст для контраста */
+    font-family: 'Montserrat', sans-serif;
 }
+
+/* Видеофон */
+#video-background {
+    position: fixed; /* Размещаем видео по всему экрану */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1; /* Размещаем видео позади всего содержимого */
+}
+
+/* Затемнение (опционально) */
 body::before {
-    content: ''; /* Создаем пустой элемент */
-    position: fixed; /* Фиксируем его на месте */
+    content: '';
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Полупрозрачное затемнение */
-    z-index: -1; /* Размещаем затемнение за основным содержимым */
+    z-index: -1; /* Размещаем затемнение перед видео */
 }
+
 /* Шапка (Header) */
 header {
-    background: linear-gradient(45deg, #0074d9, #636efa); /* Сине-фиолетовый градиент */
+    background: linear-gradient(45deg, #0074d9, #636efa);
     color: white;
     padding: 20px 0;
 }
-
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
 header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
-
 header nav ul li a:hover {
-    color: #ffffffcc; /* Более светлый белый при наведении */
+    color: #ffffffcc;
 }
 
-/* Главная секция (Home) */
+/* Главная секция (#home) */
 #home {
     text-align: center;
     padding: 100px 20px;
-    background: url('background.jpg') no-repeat center center/cover; /* Фоновое изображение */
-    color: white;
 }
-
 #home h1 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -64,7 +69,6 @@ header nav ul li a:hover {
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 10px rgba(0, 116, 217, 0.5), 0 0 20px rgba(0, 116, 217, 0.3);
 }
-
 #home p {
     font-size: 24px;
 }
@@ -74,14 +78,13 @@ header nav ul li a:hover {
     padding: 60px 20px;
     background-color: white;
     text-align: center;
+    color: black; /* Темный текст для светлого фона */
 }
-
 #about h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
-
 #about p {
     font-size: 18px;
     line-height: 1.6;
@@ -92,19 +95,17 @@ header nav ul li a:hover {
     padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
+    color: black; /* Темный текст для светлого фона */
 }
-
 #services h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
-
 #services ul {
     list-style: none;
     padding: 0;
 }
-
 #services ul li {
     font-size: 20px;
     margin: 10px 0;
@@ -115,14 +116,13 @@ header nav ul li a:hover {
     padding: 60px 20px;
     background-color: white;
     text-align: center;
+    color: black; /* Темный текст для светлого фона */
 }
-
 #contact h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
-
 #contact p {
     font-size: 18px;
 }
