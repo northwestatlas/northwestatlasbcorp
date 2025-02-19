@@ -1,3 +1,11 @@
+/* Регистрация шрифта Wila Milita */
+@font-face {
+    font-family: 'Wila Milita';
+    src: url('wila-milita.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Общие настройки */
 * {
     margin: 0;
@@ -9,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     color: white; /* Белый текст для контраста */
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
 }
 
 /* Видеофон */
@@ -60,6 +68,7 @@ header {
     background: transparent; /* Прозрачный фон */
     color: white; /* Белый текст */
     padding: 20px 0;
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
 }
 
 header nav ul {
@@ -74,6 +83,7 @@ header nav ul li a {
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
 }
 
 header nav ul li a:hover {
@@ -87,6 +97,7 @@ header nav ul li a:hover {
 }
 
 #home h1 {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 48px;
     margin-bottom: 20px;
     color: white; /* Белый цвет текста */
@@ -94,6 +105,7 @@ header nav ul li a:hover {
 }
 
 #home p {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 24px;
     color: white; /* Белый цвет текста */
 }
@@ -104,12 +116,14 @@ header nav ul li a:hover {
 }
 
 #about h2 {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
 
 #about p {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 18px;
     line-height: 1.6;
 }
@@ -120,6 +134,7 @@ header nav ul li a:hover {
 }
 
 #services h2 {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
@@ -131,6 +146,7 @@ header nav ul li a:hover {
 }
 
 #services ul li {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 20px;
     margin: 10px 0;
 }
@@ -141,12 +157,14 @@ header nav ul li a:hover {
 }
 
 #contact h2 {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 36px;
     margin-bottom: 20px;
     color: #0074d9;
 }
 
 #contact p {
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
     font-size: 18px;
 }
 
@@ -157,4 +175,5 @@ footer {
     text-align: center;
     padding: 20px 0;
     font-size: 14px;
+    font-family: 'Wila Milita', sans-serif; /* Использование шрифта Wila Milita */
 }
