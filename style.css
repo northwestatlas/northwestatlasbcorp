@@ -15,8 +15,15 @@ body {
 /* Раздел "Партнеры" */
 #partners {
     padding: 80px 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 55, 0.6));
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+#partners:hover {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(26, 26, 55, 0.7));
 }
 
 #partners h2 {
@@ -29,17 +36,18 @@ body {
 .partners-slider {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .partners-slider img {
-    max-width: 150px; /* Размер логотипов */
+    max-width: 150px;
     height: auto;
-    filter: grayscale(100%); /* Ч/б эффект */
+    filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
 
 .partners-slider img:hover {
-    filter: grayscale(0); /* Цветной при наведении */
+    filter: grayscale(0);
 }
 
 /* Стили для точек навигации Slick Slider */
@@ -47,6 +55,7 @@ body {
     bottom: -20px;
     display: flex;
     justify-content: center;
+    gap: 5px;
 }
 
 .slick-dots li button {
@@ -55,16 +64,24 @@ body {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     border: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
 .slick-dots li.slick-active button {
     background: #fff;
+    transform: scale(1.2);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .partners-slider img {
-        max-width: 120px; /* Уменьшаем размер логотипов на маленьких экранах */
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-slider img {
+        max-width: 100px;
     }
 }
