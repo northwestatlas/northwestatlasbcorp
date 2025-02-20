@@ -1,28 +1,12 @@
-/* Регистрация шрифтов */
-@font-face {
-    font-family: 'Wila Milita';
-    src: url('wila-milita.regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SuisseIntl';
-    src: url('suisseintl-300italic.woff2') format('woff2'),
-         url('suisseintl-300italic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
 /* Общие настройки */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none; /* Защита от копирования */
 }
 body {
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
     background: linear-gradient(180deg, #000 0%, #1a1a37 100%);
@@ -94,11 +78,12 @@ nav a:hover {
 
 /* Главная секция */
 #home {
-    padding: 150px 20px 80px;
+    padding-top: 80px; /* Отступ для шапки */
+    padding-bottom: 80px;
     position: relative;
     z-index: 1;
 }
-#home h1 {
+.site-title {
     font-family: 'Wila Milita', Arial, sans-serif;
     font-size: 64px;
     line-height: 1.2;
@@ -106,14 +91,17 @@ nav a:hover {
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
     opacity: 0;
-    animation: fadeIn 2s ease forwards;
+    animation: fadeInTitle 2s ease forwards;
 }
-#home h2 {
+.site-slogan {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
     color: white;
+    opacity: 0;
+    animation: fadeInSlogan 2s ease forwards;
+    animation-delay: 2s;
 }
 .blue-glow {
     color: #0074D9;
@@ -125,6 +113,26 @@ nav a:hover {
     text-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37;
     animation: pulse-gold 2s infinite;
 }
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeInSlogan {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @keyframes pulse-blue {
     0% { text-shadow: 0 0 10px #87CEEB; }
     50% { text-shadow: 0 0 20px #87CEEB; }
@@ -135,14 +143,12 @@ nav a:hover {
     50% { text-shadow: 0 0 20px #D4AF37; }
     100% { text-shadow: 0 0 10px #D4AF37; }
 }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 36px;
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+    .site-slogan {
+        font-size: 1.5rem;
     }
 }
 
@@ -170,7 +176,7 @@ nav a:hover {
     color: #fff;
 }
 .about-card p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
@@ -224,7 +230,7 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px 25px;
     border-radius: 10px;
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
@@ -264,7 +270,7 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px 25px;
     border-radius: 10px;
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
@@ -338,7 +344,7 @@ nav a:hover {
     color: #fff;
 }
 #contact p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
@@ -350,7 +356,7 @@ nav a:hover {
     display: inline-block;
     padding: 15px 30px;
     margin-top: 20px;
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
@@ -395,7 +401,7 @@ footer ul {
 footer li a {
     color: #fff;
     text-decoration: none;
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 14px;
@@ -406,7 +412,7 @@ footer li a:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 footer p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 12px;
