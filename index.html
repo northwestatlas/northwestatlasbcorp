@@ -48,6 +48,10 @@
     <!-- Раздел "О нас" -->
     <section id="about">
         <h2>О нас</h2>
+        <blockquote class="philosophy-quote">
+            "Мы инвестируем не только капитал, но и время, знания и репутацию. Каждый наш партнёр становится частью большой семьи, направленной на изменение мира к лучшему."
+            <cite>— Abraham Samuel Vladimirov</cite>
+        </blockquote>
         <div class="about-container">
             <div class="about-card">
                 <h3>Наша миссия</h3>
@@ -104,8 +108,15 @@
     <!-- Раздел "Контакты" -->
     <section id="contact">
         <h2>Контакты</h2>
-        <p>Email: info@nwa.com</p>
-        <a href="mailto:info@nwa.com" class="btn pulse">Связаться с нами</a>
+        <p id="contacts-placeholder">Нажмите, чтобы показать контакты.</p>
+        <div id="contacts" style="display: none;">
+            <p>St. Petersburg: Dana +7 931 007-77-69</p>
+            <p>Moscow: Mark +7 991 722-11-07</p>
+            <p>Sharjah: Aram +971 6 322-06-69</p>
+            <p>Available: 13:00–17:00 (Moscow Time)</p>
+            <p>Email: <span data-obfuscate="info@nwa.com"></span></p>
+        </div>
+        <button onclick="showContacts()">Показать контакты</button>
     </section>
 
     <!-- Футер -->
@@ -146,6 +157,18 @@
                         }
                     ]
                 });
+            }
+
+            // Обфускация email
+            document.querySelectorAll('[data-obfuscate]').forEach(el => {
+                const email = el.getAttribute('data-obfuscate');
+                el.textContent = email.replace(/(.+)@(.+)/, '$1 [at] $2');
+            });
+
+            // Показ контактов
+            function showContacts() {
+                document.getElementById('contacts').style.display = 'block';
+                document.getElementById('contacts-placeholder').style.display = 'none';
             }
         });
     </script>
