@@ -12,6 +12,14 @@ body {
     background: linear-gradient(180deg, #000 0%, #1a1a37 100%);
 }
 
+/* Регистрация шрифта Wila Milita */
+@font-face {
+    font-family: 'Wila Milita';
+    src: url('wila-milita.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Видеофон с затемнением */
 #video-container {
     position: fixed;
@@ -83,14 +91,6 @@ nav a:hover {
     }
 }
 
-/* Регистрация шрифта Wila Milita */
-@font-face {
-    font-family: 'Wila Milita';
-    src: url('wila-milita.regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* Главная секция */
 #home h1 {
     font-family: 'Wila Milita', Arial, sans-serif;
@@ -103,33 +103,39 @@ nav a:hover {
     animation: fadeIn 2s ease forwards; /* Анимация появления */
 }
 
+#home p {
+    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgb(255, 255, 255);
+    opacity: 0; /* Начальное состояние — невидимый */
+    animation: fadeInText 1.5s ease forwards;
+    animation-delay: 2s; /* Задержка после заголовка */
+}
+
 /* Анимация fade-in */
 @keyframes fadeIn {
     from {
-        opacity: 0; /* Начинается с нулевой прозрачности */
-        transform: scale(0.9); /* Масштабируется слегка меньше */
+        opacity: 0;
+        transform: scale(0.9);
     }
     to {
-        opacity: 1; /* Полностью видимый */
-        transform: scale(1); /* Возвращается к нормальному размеру */
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-/* Раздел Investment Focus */
-.investment-block {
-    font-family: 'Wila Milita', Arial, sans-serif;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px 25px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s ease;
-}
-
-.investment-block:hover {
-    background: rgba(255, 255, 255, 0.2);
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Раздел "О нас" */
@@ -225,15 +231,38 @@ nav a:hover {
     width: 150px; /* Фиксированная ширина */
     height: 80px; /* Фиксированная высота */
     object-fit: contain; /* Сохраняет пропорции */
-    filter: grayscale(100%); /* Ч/б эффект */
+    filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
 
 .partners-slider img:hover {
-    filter: grayscale(0); /* Цветной при наведении */
+    filter: grayscale(0);
 }
 
-/* Адаптивность */
+/* Стили для точек навигации Slick Slider */
+.slick-dots {
+    bottom: -20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+/* Адаптивность для слайдера */
 @media (max-width: 768px) {
     .partners-slider img {
         width: 120px;
@@ -299,15 +328,8 @@ nav a:hover {
     color: #fff;
 }
 
-.investment-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
 .investment-block {
+    font-family: 'Wila Milita', Arial, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     padding: 15px 25px;
     border-radius: 10px;
