@@ -210,49 +210,29 @@ nav a:hover {
 }
 
 .partners-slider img {
-    max-width: 150px;
-    height: auto;
-    filter: grayscale(100%);
+    width: 150px; /* Фиксированная ширина */
+    height: 80px; /* Фиксированная высота */
+    object-fit: contain; /* Сохраняет пропорции */
+    filter: grayscale(100%); /* Ч/б эффект */
     transition: filter 0.3s ease;
 }
 
 .partners-slider img:hover {
-    filter: grayscale(0);
+    filter: grayscale(0); /* Цветной при наведении */
 }
 
-/* Стили для точек навигации Slick Slider */
-.slick-dots {
-    bottom: -20px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.slick-dots li button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-}
-
-.slick-dots li.slick-active button {
-    background: #fff;
-    transform: scale(1.2);
-}
-
-/* Адаптивность для слайдера */
+/* Адаптивность */
 @media (max-width: 768px) {
     .partners-slider img {
-        max-width: 120px;
+        width: 120px;
+        height: 60px;
     }
 }
 
 @media (max-width: 480px) {
     .partners-slider img {
-        max-width: 100px;
+        width: 100px;
+        height: 50px;
     }
 }
 
