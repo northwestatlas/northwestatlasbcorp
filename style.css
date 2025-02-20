@@ -313,27 +313,9 @@ nav a:hover {
     filter: grayscale(0);
 }
 
-/* Стили для точек навигации Slick Slider */
+/* Скрываем точки навигации Slick Slider */
 .slick-dots {
-    bottom: -20px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.slick-dots li button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-}
-
-.slick-dots li.slick-active button {
-    background: #fff;
-    transform: scale(1.2);
+    display: none; /* Полностью скрываем точки */
 }
 
 /* Адаптивность для слайдера */
