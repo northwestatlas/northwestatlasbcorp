@@ -1,3 +1,20 @@
+/* Регистрация шрифтов */
+@font-face {
+    font-family: 'Wila Milita';
+    src: url('wila-milita.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SuisseIntl';
+    src: url('suisseintl-300italic.woff2') format('woff2'),
+         url('suisseintl-300italic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
 /* Общие настройки */
 * {
     margin: 0;
@@ -84,7 +101,7 @@ nav a:hover {
     z-index: 1;
 }
 .site-title {
-    font-family: 'Wila Milita', Arial, sans-serif;
+    font-family: 'Wila Milita', Arial, sans-serif; /* Вернули Wila Milita */
     font-size: 64px;
     line-height: 1.2;
     margin-bottom: 20px;
