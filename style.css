@@ -61,7 +61,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 0;
+    padding: 10px 0;
     backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.7);
     z-index: 999;
@@ -71,15 +71,19 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -88,9 +92,17 @@ nav a:hover {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
 /* Главная секция */
 #home {
-    padding: 200px 20px 100px;
+    padding: 150px 20px 80px;
     position: relative;
     z-index: 1;
 }
@@ -114,7 +126,18 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* Контейнер для карточек "О нас" */
+@media (max-width: 480px) {
+    #home h1 {
+        font-size: 36px;
+    }
+
+    #home p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+/* Раздел "О нас" */
 .about-container {
     display: flex;
     flex-wrap: wrap;
@@ -123,13 +146,12 @@ nav a:hover {
     margin-top: 20px;
 }
 
-/* Карточки "О нас" */
 .about-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px 30px;
-    width: calc(25% - 20px); /* 4 колонки */
+    width: calc(25% - 20px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -155,16 +177,25 @@ nav a:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .about-card {
-        width: calc(50% - 20px); /* 2 колонки на маленьких экранах */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .about-card {
-        width: 100%; /* 1 колонка на очень маленьких экранах */
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .about-card h3 {
+        font-size: 20px;
+    }
+
+    .about-card p {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 
@@ -204,6 +235,13 @@ nav a:hover {
 
 #services li:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+    #services li {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
 }
 
 /* Раздел "Investment Focus" */
@@ -249,6 +287,13 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
+@media (max-width: 480px) {
+    .investment-block {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
 /* Раздел "Контакты" */
 #contact {
     padding: 80px 20px;
@@ -272,7 +317,6 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* Кнопка "Связаться с нами" */
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -295,6 +339,13 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+@media (max-width: 480px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
 /* Футер */
 footer ul {
     list-style: none;
@@ -306,27 +357,20 @@ footer ul {
 }
 
 footer li a {
-    color: #fff; /* Белый цвет */
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer li a:hover {
-    color: rgba(153, 102, 255, 1); /* Фиолетовый при наведении */
+    color: rgba(153, 102, 255, 1);
 }
-/* Адаптивность */
-@media (max-width: 768px) {
-    #home h1 {
-        font-size: 48px;
-    }
 
-    .card {
-        padding: 15px 20px;
-        font-size: 16px;
-    }
-
-    .investment-block {
-        flex-basis: 100%;
-        margin-bottom: 10px;
-    }
+footer p {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding: 10px 20px;
 }
