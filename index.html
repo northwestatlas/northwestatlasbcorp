@@ -36,8 +36,37 @@
     </header>
     <!-- Главная секция -->
     <section id="home">
-        <h1>North West <br>Atlas <br>B Corp</h1>
-        <p>Стратегия успеха³ | Надёжность будущего⁸</p>
+       <h1>North West Atlas B Corp</h1>
+<h2>
+  Стратегия успеха <span class="blue-glow">³</span> | 
+  Надёжность будущего <span class="gold-glow">⁸</span>
+</h2>
+
+<style>
+  .blue-glow {
+    color: #0074D9;
+    text-shadow: 0 0 10px #87CEEB, 0 0 20px #87CEEB;
+    animation: pulse-blue 2s infinite;
+  }
+
+  .gold-glow {
+    color: #D4AF37;
+    text-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37;
+    animation: pulse-gold 2s infinite;
+  }
+
+  @keyframes pulse-blue {
+    0% { text-shadow: 0 0 10px #87CEEB; }
+    50% { text-shadow: 0 0 20px #87CEEB; }
+    100% { text-shadow: 0 0 10px #87CEEB; }
+  }
+
+  @keyframes pulse-gold {
+    0% { text-shadow: 0 0 10px #D4AF37; }
+    50% { text-shadow: 0 0 20px #D4AF37; }
+    100% { text-shadow: 0 0 10px #D4AF37; }
+  }
+</style>
     </section>
     <!-- Раздел "О нас" -->
     <section id="about">
