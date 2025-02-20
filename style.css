@@ -83,13 +83,15 @@ nav a:hover {
     }
 }
 
-/* Главная секция */
-#home {
-    padding: 150px 20px 80px;
-    position: relative;
-    z-index: 1;
+/* Регистрация шрифта Wila Milita */
+@font-face {
+    font-family: 'Wila Milita';
+    src: url('wila-milita.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* Главная секция */
 #home h1 {
     font-family: 'Wila Milita', Arial, sans-serif;
     font-size: 64px;
@@ -97,27 +99,37 @@ nav a:hover {
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+    opacity: 0; /* Начальное состояние — невидимый */
+    animation: fadeIn 2s ease forwards; /* Анимация появления */
 }
 
-#home p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
+/* Анимация fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Начинается с нулевой прозрачности */
+        transform: scale(0.9); /* Масштабируется слегка меньше */
+    }
+    to {
+        opacity: 1; /* Полностью видимый */
+        transform: scale(1); /* Возвращается к нормальному размеру */
+    }
+}
+
+/* Раздел Investment Focus */
+.investment-block {
+    font-family: 'Wila Milita', Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 10px;
     font-size: 18px;
-    line-height: 27px;
-    color: rgb(255, 255, 255);
-    opacity: 0.9;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    #home h1 {
-        font-size: 36px;
-    }
-
-    #home p {
-        font-size: 16px;
-        line-height: 24px;
-    }
+.investment-block:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Раздел "О нас" */
