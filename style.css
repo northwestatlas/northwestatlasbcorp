@@ -4,6 +4,7 @@
     src: url('wila-milita.regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Регистрация шрифта SuisseIntl */
@@ -13,6 +14,7 @@
          url('suisseintl-300italic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
 }
 
 /* Общие настройки */
@@ -88,7 +90,6 @@ nav a {
 }
 
 nav a:hover {
-    color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
@@ -114,8 +115,8 @@ nav a:hover {
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
-    opacity: 0; /* Начальное состояние — невидимый */
-    animation: fadeIn 2s ease forwards; /* Анимация появления */
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
 }
 
 #home p {
@@ -125,12 +126,11 @@ nav a:hover {
     font-size: 18px;
     line-height: 27px;
     color: rgb(255, 255, 255);
-    opacity: 0; /* Начальное состояние — невидимый */
+    opacity: 0;
     animation: fadeInText 1.5s ease forwards;
-    animation-delay: 2s; /* Задержка после заголовка */
+    animation-delay: 2s;
 }
 
-/* Анимация fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -153,12 +153,10 @@ nav a:hover {
     }
 }
 
-/* Адаптивность для главной секции */
 @media (max-width: 480px) {
     #home h1 {
         font-size: 36px;
     }
-
     #home p {
         font-size: 16px;
         line-height: 24px;
@@ -205,7 +203,6 @@ nav a:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Адаптивность для карточек "О нас" */
 @media (max-width: 768px) {
     .about-card {
         width: calc(50% - 20px);
@@ -217,11 +214,9 @@ nav a:hover {
         width: 100%;
         padding: 15px 20px;
     }
-
     .about-card h3 {
         font-size: 20px;
     }
-
     .about-card p {
         font-size: 14px;
         line-height: 20px;
@@ -268,7 +263,6 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Адаптивность для списка услуг */
 @media (max-width: 480px) {
     #services li {
         font-size: 16px;
@@ -349,9 +343,9 @@ nav a:hover {
 }
 
 .partners-slider img {
-    width: 150px; /* Фиксированная ширина */
-    height: 80px; /* Фиксированная высота */
-    object-fit: contain; /* Сохраняет пропорции */
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
@@ -360,12 +354,10 @@ nav a:hover {
     filter: grayscale(0);
 }
 
-/* Скрываем точки навигации Slick Slider */
 .slick-dots {
     display: none;
 }
 
-/* Адаптивность для слайдера */
 @media (max-width: 768px) {
     .partners-slider img {
         width: 120px;
@@ -418,12 +410,23 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-    background: rgba(153, 102, 255, 0.3);
-    transform: scale(1.05);
+.btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
 }
 
 /* Адаптивность для кнопки */
@@ -456,7 +459,7 @@ footer li a {
 }
 
 footer li a:hover {
-    color: rgba(153, 102, 255, 1);
+    color: rgba(255, 255, 255, 0.8); /* Изменение цвета при наведении */
 }
 
 footer p {
