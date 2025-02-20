@@ -52,7 +52,7 @@
             </div>
             <div class="about-card">
                 <h3>Наши цели</h3>
-                <p>Наша цель — не просто создавать успешные бизнесы, а формировать наследие, которое укрепляет технологический суверенитет страны...</p>
+                <p>Наша цель — не просто создавать успешные бизнесы, а формировать наследие...</p>
             </div>
             <div class="about-card">
                 <h3>Наши принципы</h3>
@@ -75,64 +75,17 @@
         </ul>
     </section>
 
-    /* Раздел "Партнеры" */
-#partners {
-    padding: 80px 20px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 55, 0.6));
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-#partners:hover {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(26, 26, 55, 0.7));
-}
-
-#partners h2 {
-    font-family: 'Wila Milita', Arial, sans-serif;
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
-.partners-slider {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.partners-slider img {
-    width: 150px; /* Фиксированная ширина */
-    height: 80px; /* Фиксированная высота */
-    object-fit: contain; /* Сохраняет пропорции */
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-}
-
-.partners-slider img:hover {
-    filter: grayscale(0);
-}
-
-/* Скрываем точки навигации Slick Slider */
-.slick-dots {
-    display: none; /* Полностью скрываем точки */
-}
-
-/* Адаптивность для слайдера */
-@media (max-width: 768px) {
-    .partners-slider img {
-        width: 120px;
-        height: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .partners-slider img {
-        width: 100px;
-        height: 50px;
-    }
-}
+    <!-- Раздел "Партнеры" -->
+    <section id="partners">
+        <h2>Наши партнеры</h2>
+        <div class="partners-slider">
+            <div><img src="veb-rf-logo.png" alt="ВЭБ.РФ"></div>
+            <div><img src="rosteh-logo.png" alt="Ростех"></div>
+            <div><img src="ros-eximbank-logo.png" alt="Росэксимбанк"></div>
+            <div><img src="rshb-inteh-logo.png" alt="РСХБ-Интех"></div>
+            <div><img src="minpromtorg-logo.png" alt="Минпромторг"></div>
+        </div>
+    </section>
 
     <!-- Раздел "Investment Focus" -->
     <section id="investment-focus">
@@ -175,7 +128,6 @@
                     autoplay: true,
                     autoplaySpeed: 2000,
                     arrows: false,
-                    dots: true,
                     responsive: [
                         {
                             breakpoint: 768,
