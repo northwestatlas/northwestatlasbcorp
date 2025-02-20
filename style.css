@@ -114,51 +114,58 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* Раздел "О нас" */
-#about {
-    padding: 80px 20px;
-    position: relative;
-    z-index: 1;
+/* Контейнер для карточек "О нас" */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.card {
+/* Карточки "О нас" */
+.about-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px 30px;
-    margin-bottom: 20px;
+    width: calc(25% - 20px); /* 4 колонки */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.about-card h3 {
+    font-family: 'Wila Milita', Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.about-card p {
+    font-family: 'SuisseIntl', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-#about h2, #about h3 {
-    font-family: 'Wila Milita', Arial, sans-serif;
-    color: #fff;
-    margin-bottom: 20px;
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .about-card {
+        width: calc(50% - 20px); /* 2 колонки на маленьких экранах */
+    }
 }
 
-#about p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 27px;
-    color: rgb(255, 255, 255);
-    opacity: 0.9;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.section-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 40px 0;
+@media (max-width: 480px) {
+    .about-card {
+        width: 100%; /* 1 колонка на очень маленьких экранах */
+    }
 }
 
 /* Раздел "Услуги" */
@@ -289,12 +296,6 @@ nav a:hover {
 }
 
 /* Футер */
-footer {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 55, 1));
-    padding: 20px;
-    text-align: center;
-}
-
 footer ul {
     list-style: none;
     padding: 0;
@@ -305,15 +306,14 @@ footer ul {
 }
 
 footer li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff; /* Белый цвет */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer li a:hover {
-    color: rgba(153, 102, 255, 1);
+    color: rgba(153, 102, 255, 1); /* Фиолетовый при наведении */
 }
-
 /* Адаптивность */
 @media (max-width: 768px) {
     #home h1 {
