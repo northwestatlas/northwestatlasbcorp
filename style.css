@@ -26,7 +26,7 @@ body {
     font-family: 'SuisseIntl', Arial, sans-serif;
     color: #fff;
     text-align: center;
-    background-color: #000;
+    background: linear-gradient(180deg, #000 0%, #1a1a37 100%);
 }
 
 /* Видеофон с затемнением */
@@ -52,7 +52,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 55, 0.8));
     z-index: -1;
 }
 
@@ -121,14 +121,19 @@ nav a:hover {
     z-index: 1;
 }
 
-#about .content-box {
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 #about h2, #about h3 {
@@ -149,20 +154,11 @@ nav a:hover {
     text-align: center;
 }
 
-#about ul {
-    list-style-type: decimal;
-    padding-left: 30px;
-    margin: 0;
-    text-align: left;
-}
-
-#about li {
-    font-family: 'SuisseIntl', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #fff;
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
 }
 
 /* Раздел "Услуги" */
@@ -239,6 +235,13 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* Раздел "Контакты" */
 #contact {
     padding: 80px 20px;
@@ -274,33 +277,41 @@ nav a:hover {
     line-height: 27px;
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     text-decoration: none;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(153, 102, 255, 0.3);
     transform: scale(1.05);
 }
 
 /* Футер */
 footer {
-    background: #000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 55, 1));
     padding: 20px;
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
-footer p {
-    font-family: 'SuisseIntl', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 1px;
-    opacity: 0.8;
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer li a:hover {
+    color: rgba(153, 102, 255, 1);
 }
 
 /* Адаптивность */
@@ -309,17 +320,13 @@ footer p {
         font-size: 48px;
     }
 
-    #about .content-box {
-        max-width: 100%;
-        padding: 30px 20px;
-    }
-
-    #about h2, #about h3 {
-        font-size: 24px;
-    }
-
-    #about p, #about li {
+    .card {
+        padding: 15px 20px;
         font-size: 16px;
-        line-height: 24px;
+    }
+
+    .investment-block {
+        flex-basis: 100%;
+        margin-bottom: 10px;
     }
 }
